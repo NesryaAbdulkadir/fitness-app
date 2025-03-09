@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* Variables */
+@theme{
+    --color-dark-gray: #494949;
+    --color-light-gray: #D9D9D9;
+    --color-white: #F3F3F3;
+    --color-primary-100: #FFA726;
+    --color-secondary-100: #42A5F5;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-l: 20px;
+    --spacing-xl: 25px;
+    --spacing-xxl: 35px;
+    --font-1: "Noto Sans JP", serif;
+    --h1: 600 30px var(--font-1);
+    --h2: 600 20px var(--font-1);
+    --p: 18px var(--font-1);
+    --small: 14px var(--font-1);
+    --drop-shadow-10: 0px 2px 10px rgba(0, 0, 0, 0.25);
+    --drop-shadow-25: 0px 2px 25px rgba(0, 0, 0, 0.25);
+    --border-1: 1px solid var(--color-light-gray);
+    --opacity-80: 0.7;
+    --opacity-60: 0.5;
+
+}
+/* Utilities */
+@layer utilities{
+    .font-h1{
+      font: var(--h1);
+      @apply my-2;
+    }
+    .font-h2{
+      font: var(--h2);
+      @apply my-2;
+    }
+    .font-p{
+      font: var(--p);
+      @apply my-2;
+    }
+    .font-sm{
+      font: var(--small);
+        @apply my-2;
+    }
+}
+/* Global styles */
+@layer base{
+    html{
+        scroll-behavior: smooth;
+    }
+    body{
+        text-wrap: balance;
+        font: var(--p);
+        @apply bg-white text-dark-gray;
+    }
+    h1{
+      font: var(--h1);
+       @apply my-2
+    }
+    h2{
+      font: var(--h2);
+      @apply my-2
+    }
+    p{
+      font: var(--p);
+      @apply my-2
+    }
+    a{
+      font: var(--p);
+      
+      @apply text-secondary-100 no-underline py-2;
+    }
+    a:hover{
+        @apply text-dark-gray border-b-1 ;
+    }
+    .btn,button{
+        @apply inline-block my-2 bg-primary-100 py-2 px-4 text-dark-gray rounded-md cursor-pointer;
+    }
+    .btn:hover, button:hover{
+        @apply opacity-80 transition duration-300 ease-in-out;
+    }
+    .btn:disabled, button:disabled{
+      @apply opacity-60 cursor-not-allowed
+    }
+    img{
+        @apply w-full;
+    }
+    section{
+        @apply w-11/12 max-w-[1080px] mx-auto
+    }
+    .card{
+        @apply rounded-md min-h-[70px]
+    }
+}
+
+
+
+
+
+
+
+
+
